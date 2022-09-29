@@ -31,11 +31,11 @@ public class InquiryDaoImpl implements InquiryDao {
 				inquiry.getName(), inquiry.getEmail(), inquiry.getContents(), inquiry.getCreated());
 
 	}
-	
+
 //	データベースから値を取り出すメソッド
 	@Override
 	public List<Inquiry> getAll() {
-		String sql = "SELECT id, name, emal, contents, created FROM inquiry";
+		String sql = "SELECT id, name, email, contents, created FROM inquiry";
 		List<Map<String, Object>> resultList = jdbcTemplate.queryForList(sql);
 		List<Inquiry> list = new ArrayList<Inquiry>();
 		for(Map<String, Object> result : resultList) {
